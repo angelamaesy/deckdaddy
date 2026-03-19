@@ -4,8 +4,26 @@ import { useState, useRef, useEffect } from "react";
 // SUPABASE CONFIG
 // ============================================================
 const SUPABASE_URL = "https://kgsqqfvmxbcgvghdlsnz.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_ibW_v36VRxnmcqBdz5CkZg_1OR9q4wJ"; // Replace with your actual anon key
-const ANTHROPIC_API_KEY = "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"; // Replace - or use env var
+const ANTHROPIC_API_KEY = import.meta.env.VITE_ANTHROPIC_API_KEY;
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+```
+
+---
+
+**Step 3 — Add `.env` to `.gitignore`**
+
+Open the `.gitignore` file in your project and add this line at the bottom:
+```
+.env
+```
+
+---
+
+**Step 4 — Push again**
+```
+git add .
+git commit -m "move keys to env"
+git push
 
 // ============================================================
 // HELPERS
